@@ -1,0 +1,31 @@
+.header {
+    position: sticky;
+    top: 1%;
+    margin-bottom: 20px;
+    margin-right: 15%;
+    margin-left: 15%;
+    z-index: 1000;
+}
+
+li {
+    display: inline-block;
+    list-style: none;
+}
+
+.header__titulo {
+    font-size: 2.5em;
+    margin-left: 1em;
+    font-family: "Montserrat", sans-serif;
+    padding-top: 0.5em;
+}
+
+.nav {
+    font-family: "Oswald", sans-serif;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    font-size: 1.5em;
+}
+
+/*.navbar-toggler-icon {
+    background-image: url(../Imagenes/menuu.png);
+}*/
