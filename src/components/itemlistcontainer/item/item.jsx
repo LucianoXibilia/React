@@ -9,6 +9,7 @@ export const Item = ({id,name,price,img})=>{
                 {price}
             </h4>
             <img src={img} alt={name} />
+            <link to={'/item/${id}'} />
         </div>
     )
 }
