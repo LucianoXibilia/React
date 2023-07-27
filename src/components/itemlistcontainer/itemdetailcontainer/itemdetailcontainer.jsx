@@ -4,22 +4,24 @@ import { useParams } from "react-router-dom"
 import { getProductById } from "../../../asyncMock"
 
 
-export const ItemListContainer = ({greeting}) =>{
-    const [products, setProducts] = useState([])
+export const ItemDetailContainer = ({greeting}) =>{
+    const [products, setProducts] = useState([null])
+
+    const {itemId} =useParams()
 
     useEffect(()=> {
-        getProducts()
+        getProductsById(itemId)
             .then(response=> {
                 setProducts(response)
             })
             .catch(error => {
                 console.error(error)
             })
-    },)
+    }, [itemId])
 
     return(
         <div>
-            <itemList {...product} />
+            <itemDetail {...product} />
         </div>
     )
 }

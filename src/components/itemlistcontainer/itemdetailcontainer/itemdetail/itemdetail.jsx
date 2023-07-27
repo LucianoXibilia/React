@@ -1,4 +1,4 @@
-export const Item = ({id,name,price,img})=>{
+const ItemDetail = ({id,name,price,img})=>{
     
     return(
         <div className="produ__cajas__producto">
@@ -12,3 +12,4 @@ export const Item = ({id,name,price,img})=>{
         </div>
     )
 }
+export default itemDetail
