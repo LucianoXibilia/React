@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { getProductById } from "../../../asyncMock"
+import { getProducts } from "../../asyncMock"
 
 
 export const ItemListContainer = ({greeting}) =>{
@@ -19,7 +19,8 @@ export const ItemListContainer = ({greeting}) =>{
 
     return(
         <div>
-            <itemList {...product} />
+            <h1>{greeting}</h1>
+            <itemList products={products} />
         </div>
     )
 }
