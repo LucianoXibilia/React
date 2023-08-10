@@ -1,7 +1,7 @@
 const products = [
-    {id:'1',name:'Labiales Rojos', price: 800, img:'./multimedia./labialesrojos.jpeg'},
-    {id:'2',name:'Pack de esmalte', price: 4500, img:'./multimedia./packdeesmalte.jpeg'},
-    {id:'3',name:'Pack de pinceles', price: 2600, img:'./multimedia./packdepinceles.jpeg'},
+    {id:'1',name:'Labiales Rojos', price: 800, img:'../../multimedia/labialesrojos.jpeg', category:'Rostro'},
+    {id:'2',name:'Pack de esmalte', price: 4500, img:'../../multimedia/packdeesmalte.jpeg', category:'Manos'},
+    {id:'3',name:'Pack de pinceles', price: 2600, img:'../../multimedia/packdepinceles.jpeg', category:'Rostro'},
 ]
 
 export const getProducts = () => {

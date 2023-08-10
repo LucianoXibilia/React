@@ -3,10 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Footer } from './components/footer/footer'
 import { NavBar } from './components/navbar/navbar'
-import { ItemListContainer } from './components/itemlistcontainer/itemlistcontainer'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import './App.css'
-import { ItemDetailContainer } from './components/itemlistcontainer/itemdetailcontainer/itemdetailcontainer'
+import ItemListContainer from './components/itemlistcontainer/itemlistcontainer'
+import ItemDetail from './components/itemdetail/itemdetail'
+import Home from './pages/home'
+import ItemDetailContainer from './components/itemdetailcontainer/itemdetailcontainer'
 
 /*function App(){
   <>
@@ -18,27 +20,53 @@ import { ItemDetailContainer } from './components/itemlistcontainer/itemdetailco
   </>
 }
 */
+
+const routes = createBrowserRouter(
+  createRoutesFromElements(
+        <Route element={<NavBar />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/item' element={<ItemListContainer />} />
+          <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+          <Route path='*' element={<h1>404 Pagina no encontrada</h1>} />
+        </Route>
+  )
+)
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></link>
-      
-      <header><NavBar /></header>
-      <BrowserRouter>
+      <RouterProvider router={routes} />
+    </>
+  )
+}
+/* 
+
+<NavBar />
+      <ItemListContainer />
+      <Footer />
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></link>
+<Route path='/item/:itemId' element={<ItemDetailContainer />} />
+
+const routes = createBrowserRouter(
+  createRoutesFromElements(
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='*' element={<h1>404 Pagina no encontrada</h1>} />
         </Routes>
-      </BrowserRouter>
-      <ItemListContainer />
-      <Footer />
-    </>
   )
-}
-/* 
+)
+
+<header></header>
+
+<ItemListContainer />
+
+
 <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

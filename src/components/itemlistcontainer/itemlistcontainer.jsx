@@ -1,10 +1,8 @@
+import { useState, useEffect } from "react";
+import { getProducts } from "../../asyncMock";
+import ItemList from "../itemlist/itemlist";
 
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { getProducts } from "../../asyncMock"
-
-
-export const ItemListContainer = ({greeting}) =>{
+const ItemListContainer = ({greeting}) =>{
     const [products, setProducts] = useState([])
 
     useEffect(()=> {
@@ -20,7 +18,9 @@ export const ItemListContainer = ({greeting}) =>{
     return(
         <div>
             <h1>{greeting}</h1>
-            <itemList products={products} />
+            <ItemList products={products} />
         </div>
     )
 }
+
+export default ItemListContainer
