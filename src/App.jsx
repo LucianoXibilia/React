@@ -9,6 +9,9 @@ import ItemListContainer from './components/itemlistcontainer/itemlistcontainer'
 import ItemDetail from './components/itemdetail/itemdetail'
 import Home from './pages/home'
 import ItemDetailContainer from './components/itemdetailcontainer/itemdetailcontainer'
+import { CartProvider } from './components/Context/Cart.Context'
+import { Cart } from './pages/Cart'
+
 
 /*function App(){
   <>
@@ -27,6 +30,7 @@ const routes = createBrowserRouter(
           <Route path='/' element={<Home />} />
           <Route path='/item' element={<ItemListContainer />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<h1>404 Pagina no encontrada</h1>} />
         </Route>
   )
@@ -37,7 +41,9 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={routes} />
+      <CartProvider>
+        <RouterProvider router={routes} />
+      </CartProvider>
     </>
   )
 }
