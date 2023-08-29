@@ -4,9 +4,11 @@ import { useCartContext } from "../components/Context/Cart.Context"
 
 export const Cart=()=>{
     const {cart,cleanCart,getTotalPrice,removeProduct}=useCartContext();
-    useEffect(()=>{
+
+    useEffect(() => {
         console.log({cart});
     }, [cart]);
+    
     return(
         <div>
             <button onClick={cleanCart()}>Vaciar Carrito</button>

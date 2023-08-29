@@ -1,7 +1,7 @@
 import { useCartContext } from '../Context/Cart.Context'
 import './cartwidget.css'
 
-export const CartWidget =()=>{
+export const CartWidget = () => {
     const {getCartQty}=useCartContext()
     const {getTotalPrice}=useCartContext()
     return(

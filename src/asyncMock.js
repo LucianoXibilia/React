@@ -3,7 +3,7 @@
     {id:'2',name:'Pack de esmalte', price: 4500, img:'../../multimedia/packdeesmalte.jpeg', category:'Manos', stock:10},
     {id:'3',name:'Pack de pinceles', price: 2600, img:'../../multimedia/packdepinceles.jpeg', category:'Rostro', stock:10},
 ]*/
-import { collection, getDocs, getDoc,addDoc, where, query } from "firebase/firestore";
+import { collection, getDocs, getDoc,addDoc, where, query, doc } from "firebase/firestore";
 import { db } from "./lib/config";
 
 const itemsRef=collection(db,"items")
@@ -28,9 +28,9 @@ export const getProducts = async () => {
     return products;
 };
 export const getProductById = async (id)=>{
-    const document = doc(db,"items",id)
-    const docSnap = await getDoc(document)
-    if (docSnap.exist())return{id: docSnap.id, ...docSnap.data()};
+    const document = doc(db,"items",id);
+    const docSnap = await getDoc(document);
+    if (docSnap.exists())return{id: docSnap.id, ...docSnap.data()};
     
     return null;
 }
